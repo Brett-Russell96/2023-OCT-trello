@@ -10,7 +10,7 @@ from models.user import User, user_schema
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
-@auth_bp.route("/register") # /auth/register
+@auth_bp.route("/register", methods=["POST"]) # /auth/register
 def auth_register():
     try:
         # the data we get from the body of the request
