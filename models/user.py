@@ -30,7 +30,6 @@ class UserSchema(ma.Schema):
 
     cards = fields.List(fields.Nested('CardSchema', exclude=['user']))
 
-   
     comments = fields.List(fields.Nested('CommentSchema', exclude=['user']))
 
     class Meta:
