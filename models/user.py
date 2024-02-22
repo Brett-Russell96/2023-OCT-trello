@@ -10,8 +10,10 @@ class User(db.Model):
     password = db.Column(db.String, nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
 
-    cards = db.relationship('Card', back_populates='user', cascade='all, delete')
-    comments = db.relationship('Comment', back_populates='user', cascade='all, delete')
+    cards = db.relationship('Card',
+                        back_populates='user', cascade='all, delete')
+    comments = db.relationship('Comment',
+                        back_populates='user', cascade='all, delete')
 
     # {id: 1, name: User 1, email: user1@email.com}
     # {

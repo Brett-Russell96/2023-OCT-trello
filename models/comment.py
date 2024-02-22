@@ -14,9 +14,10 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     card_id = db.Column(db.Integer, db.ForeignKey("cards.id"), nullable=False)
 
-    user = db.relationship("User", back_populates="comments")
+    user = db.relationship('User', back_populates='comments')
     card = db.relationship('Card', back_populates='comments')
-
+    
+    # fetch comment with id 1
     '''
     {
         id: 1,
